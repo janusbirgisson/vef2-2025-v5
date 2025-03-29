@@ -60,5 +60,5 @@ Janus Birgisson
 
 ## Keyra verkefnið
 
-Verkefnið er keyrandi á [[Vercel]](https://vef2-2025-v5-242w0aifh-janusbirgissons-projects.vercel.app/)
+Verkefnið er keyrandi á Vercel [hér](https://vef2-2025-v5-242w0aifh-janusbirgissons-projects.vercel.app/)
 
