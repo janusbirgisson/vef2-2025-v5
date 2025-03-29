@@ -9,32 +9,39 @@ export const metadata = {
   title: 'Fréttavefur Janusar',
 };
 
-const query = graphql(
-    /* GraphQL */ `
-    query Article($id: ItemId!) {
-	    article(filter: {id:{eq: $id}}) {
-            articleTitle
-            flokkur {
-                title
-            }
-            author {
-                name
-            }
-            frett
-        }  
+const query = graphql(/* GraphQL */`
+  query ArticleById($id: ItemId!) {
+    article(filter: { id: { eq: $id } }) {
+      articleTitle
+      flokkur {
+        title
+      }
+      author {
+        name
+      }
+      frett
     }
-    `,
-    [],
-  );
+  }
+`);
 
-export default async function NewsArticlePage({ params }: { params: Promise<{ id: string }> }) {
+type Article = {
+  articleTitle: string;
+  flokkur: {
+    title: string;
+  };
+  author: {
+    name: string;
+  };
+  frett: string;
+};
+
+export default async function NewsArticlePage({ params }: { params: { id: string } }) {
   revalidateTag('datocms');
 
-  const { id } = await params;
-  console.log(id);
+  const { article } = await executeQuery(query, {
+    variables: { id: params.id },
+  });
 
-  const { article } = await executeQuery(query, {variables: {id}});
-    
   if (!article) {
     notFound();
   }

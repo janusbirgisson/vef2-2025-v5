@@ -23,12 +23,18 @@ const query = graphql(
     [],
   );
 
+type Article = {
+  id: string;
+  articleTitle: string;
+  author: {
+    name: string;
+  };
+};
+
 export default async function NewsArticlesPage() {
   revalidateTag('datocms');
 
-
-  const { allArticles } = await executeQuery(query, {
-    });
+  const { allArticles } = await executeQuery(query, {}) as { allArticles: Article[] };
     
   if (!allArticles) {
     notFound();
@@ -45,7 +51,7 @@ export default async function NewsArticlesPage() {
           <li key={article.id}>
             <Link href={`/newsArticles/${article.id}`}>{article.articleTitle}</Link>
             {' '}
-            {article.author.length > 0 ? article.author.map((author) => author.name).join(', ') : ''}
+            {article.author.name}
           </li>
         ))}
       </ul>
