@@ -10,7 +10,7 @@
 
 # Verkefni 5 - Fréttavefur
 
-Fréttavefur byggður með Next.js og DatoCMS sem hluti af Vefforritun 2, vormisseri 2024.
+Fréttavefur byggður með Next.js og DatoCMS sem hluti af Vefforritun 2, vormisseri 2025.
 
 ## Virkni
 
@@ -23,7 +23,7 @@ Vefurinn birtir fréttir sem eru vistaðar í DatoCMS. Notendur geta:
 ## Tæknilegt
 
 - Next.js 14 framework
-- TypeScript fyrir týpuöryggi
+- TypeScript
 - DatoCMS sem headless CMS
 - GraphQL fyrir fyrirspurnir í gögn
 - Markdown fyrir fréttartexta
@@ -60,9 +60,5 @@ Janus Birgisson
 
 ## Keyra verkefnið
 
-Verkefnið er keyrandi á Vercel: [Hlekkur á verkefnið]
-
-## Nánari upplýsingar
-
-Verkefnið er hluti af áfanganum Vefforritun 2 á vormisseri 2025 í Háskóla Íslands.
+Verkefnið er keyrandi á [[Vercel]](https://vef2-2025-v5-242w0aifh-janusbirgissons-projects.vercel.app/)
 
